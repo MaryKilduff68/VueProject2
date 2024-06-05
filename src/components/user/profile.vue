@@ -9,14 +9,21 @@
                 <span>Also known:</span> {{ alsoKnownAs }}
             </li>
             <li>
-                <span>Lastname:</span> {{ lastname }}
+                <span>Last name:</span> {{ userLastname }}
+            </li>
+            <li>
+                <span>Age:</span> {{ userAge }}
             </li>
         </ul>
     </div>
 </template>
 
 <script setup>
-    const props = defineProps(['alsoKnownAs','lastname']);
+    const props = defineProps({
+        alsoKnownAs: String,
+        userLastname: String,
+        userAge: Number,
+    });
     const name = 'Steve'
 </script>
 
