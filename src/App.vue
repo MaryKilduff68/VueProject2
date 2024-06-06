@@ -2,6 +2,7 @@
   <div>
     <app-header />
     <div class="container">
+      <Life v-if="showComponent"/>
       <!-- <UserProfile
               :alsoKnownAs="data.name"
               :userLastname="data.lastname"
@@ -13,7 +14,7 @@
           />
           <button @click="updateName">Update name</button>
       </div> -->
-      <Cars />
+      <!-- <Cars />
       <hr />
       <CarBrands>
         <template v-slot:brands>
@@ -25,9 +26,9 @@
         <div> Some other content</div>
       </template>
       </CarBrands> 
-      <!-- <hr/>
-      <button @click="updateCar"> Update Car</button> -->
-    </div>
+      <hr/> -->
+      <!-- <button @click="updateCar"> Update Car</button> -->
+    </div> 
     <Footer />
   </div>
 </template>
@@ -37,23 +38,32 @@ import Footer from "@/components/header_footer/footer.vue";
 import UserProfile from "@/components/user/profile.vue";
 import Cars from "@/components/cars/index.vue";
 import CarBrands from "@/components/cars/brands.vue"
-import { reactive, provide } from "vue";
-const cars = reactive([
-  { model: "F9", brand: "Ferrari" },
-  { model: "911", brand: "Porsche" },
-  { model: "Fiesta", brand: "Ford" },
-])
+import Life from "@/components/lifecycles/index.vue"
+import { reactive, provide, ref} from "vue";
 
-const updateCar = () => {
-  cars[0].brand = 'Fiat'
-}
+const showComponent = ref(true)
 
-provide('cars',{
-        cars,
-        updateCar
-    })
+setTimeout(() => {
+  showComponent.value = false
+}, 3000);
 
-    const brands = reactive(['Mazda','Honda','Renault'])
+
+// const cars = reactive([
+//   { model: "F9", brand: "Ferrari" },
+//   { model: "911", brand: "Porsche" },
+//   { model: "Fiesta", brand: "Ford" },
+// ])
+
+// const updateCar = () => {
+//   cars[0].brand = 'Fiat'
+// }
+
+// provide('cars',{
+//         cars,
+//         updateCar
+//     })
+
+//     const brands = reactive(['Mazda','Honda','Renault'])
 // const data = reactive({
 //     name:'Rocket',
 //     lastname:'Jones',
