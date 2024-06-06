@@ -2,8 +2,10 @@
   <div>
     <app-header />
     <div class="container">
-      <button @click="activeComp = Mike">Mike</button>
-      <button @click="activeComp = Steve">Steve</button>
+      <!-- Custom Directives -->
+      <Directives></Directives>
+      <!-- <button @click="activeComp = Mike">Mike</button>
+      <button @click="activeComp = Steve">Steve</button> -->
 <!-- 
       <Mike v-if="activeComp === Mike"/>
       <Steve v-if="activeComp === Steve"/> -->
@@ -12,9 +14,9 @@
       <!-- keepalive-->
               <!-- dynamic component   -->
 
-      <keep-alive include="mike,steve">
+      <!-- <keep-alive include="mike,steve">
          <component :is="activeComp"></component>
-        </keep-alive>
+        </keep-alive> -->
      
 
 
@@ -57,6 +59,7 @@ import CarBrands from "@/components/cars/brands.vue"
 import Life from "@/components/lifecycles/index.vue"
 import Mike from  "@/components/players/mike.vue"
 import Steve from  "@/components/players/steve.vue"
+import Directives from  "@/components/directives/index.vue"
 import { reactive, provide, ref, shallowRef} from "vue";
 
 
