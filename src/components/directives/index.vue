@@ -5,6 +5,8 @@
 
     <div v-awesome.blue.small="textToRender"></div>
 
+    <button @click="textToRender='Something Else'"> Trigger Update </button>
+
 
 
 </template>
