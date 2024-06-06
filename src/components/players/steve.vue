@@ -1,12 +1,16 @@
 <template>
-    <h3> Steve is on </h3>
+    <h3>Steve is on</h3>
+
+        <Teleport to="body">
+            <Modal/>
+          </Teleport>
 </template>
 
 <script setup>
-    import {onUnmounted} from 'vue'
+    import Modal from '@/components/utils/modal.vue'
+    import { onUnmounted } from 'vue';
 
-
-    onUnmounted(() => {
-        console.log('Steve was unmounted')
+    onUnmounted(()=>{
+        console.log('Steve unmounted')
     })
 </script>

@@ -12,7 +12,7 @@
       <!-- keepalive-->
               <!-- dynamic component   -->
 
-      <keep-alive include="mike">
+      <keep-alive include="mike,steve">
          <component :is="activeComp"></component>
         </keep-alive>
      
@@ -45,7 +45,7 @@
       <hr/> -->
       <!-- <button @click="updateCar"> Update Car</button> -->
     </div> 
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
