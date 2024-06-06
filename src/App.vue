@@ -9,10 +9,15 @@
       <Steve v-if="activeComp === Steve"/> -->
 
 
-      <!-- dynamic component -->
-      <component :is="activeComp"></component>
+      <!-- keepalive-->
+              <!-- dynamic component   -->
 
-      
+      <keep-alive include="mike">
+         <component :is="activeComp"></component>
+        </keep-alive>
+     
+
+
       <!-- <Life v-if="showComponent"/> -->
       <!-- <UserProfile
               :alsoKnownAs="data.name"
