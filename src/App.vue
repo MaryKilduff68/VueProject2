@@ -2,7 +2,18 @@
   <div>
     <app-header />
     <div class="container">
-      <Life v-if="showComponent"/>
+      <button @click="activeComp = Mike">Mike</button>
+      <button @click="activeComp = Steve">Steve</button>
+<!-- 
+      <Mike v-if="activeComp === Mike"/>
+      <Steve v-if="activeComp === Steve"/> -->
+
+
+      <!-- dynamic component -->
+      <component :is="activeComp"></component>
+
+      
+      <!-- <Life v-if="showComponent"/> -->
       <!-- <UserProfile
               :alsoKnownAs="data.name"
               :userLastname="data.lastname"
@@ -39,13 +50,18 @@ import UserProfile from "@/components/user/profile.vue";
 import Cars from "@/components/cars/index.vue";
 import CarBrands from "@/components/cars/brands.vue"
 import Life from "@/components/lifecycles/index.vue"
-import { reactive, provide, ref} from "vue";
+import Mike from  "@/components/players/mike.vue"
+import Steve from  "@/components/players/steve.vue"
+import { reactive, provide, ref, shallowRef} from "vue";
 
-const showComponent = ref(true)
 
-setTimeout(() => {
-  showComponent.value = false
-}, 3000);
+const activeComp = shallowRef(Mike);
+
+// const showComponent = ref(true)
+
+// setTimeout(() => {
+//   showComponent.value = false
+// }, 3000);
 
 
 // const cars = reactive([
